@@ -127,7 +127,7 @@ Este proyecto implementa un sistema embebido optimizado para el control remoto d
 
 ---
 
-## 💻 Requisitos del Sistema
+## Requisitos del Sistema
 
 ### Hardware Requerido
 
@@ -320,7 +320,7 @@ Copiar a la ubicación esperada por la receta Yocto.
 
 ---
 
-## 📡 Documentación de la API
+## Documentación de la API
 
 El servidor expone una API REST en el puerto **5000**. Todas las peticiones requieren autenticación HTTP Basic.
 
