@@ -472,7 +472,7 @@ El servidor incluye headers CORS para permitir peticiones desde cualquier origen
 
 ---
 
-## 🎮 Uso del Sistema
+## Uso del Sistema
 
 ### Primera Configuración
 
@@ -685,7 +685,7 @@ Abrir navegador en: **http://localhost:5173**
 
 
 #### Interfaz Web
-(Agregar captura de pantalla del frontend)
+[(Agregar captura de pantalla del frontend)](https://github.com/cersluv/Proyecto01_Vehiculo-control-remoto-con-sistema-embebido-via-servidor-web/blob/43c4650b78ce6f5c9d63127c228cbd4d5ee53213/front_end.jfif)
 
 #### Logs del Servidor
 
