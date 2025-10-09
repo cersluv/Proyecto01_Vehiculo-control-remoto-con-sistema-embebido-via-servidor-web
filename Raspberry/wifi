@@ -1,0 +1,40 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          wifi
+# Required-Start:    $network
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Auto WiFi connection
+### END INIT INFO
+
+case "$1" in
+  start)
+    echo "Starting WiFi..."
+    rfkill unblock wifi
+    wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
+    dhcpcd wlan0
+    
+    # Esperar a que la conexión se establezca
+    sleep 5
+    
+    # Ejecutar server_final_v2
+    echo "Starting server_final_v2..."
+    /home/root/server_final_v2 >> /var/log/server_final_v2.log 2>&1 &
+    ;;
+  stop)
+    echo "Stopping WiFi..."
+    killall wpa_supplicant
+    killall server_final_v2 2>/dev/null
+    ;;
+  restart)
+    $0 stop
+    sleep 2
+    $0 start
+    ;;
+  *)
+    echo "Usage: /etc/init.d/wifi {start|stop|restart}"
+    exit 1
+    ;;
+esac
+exit 0
